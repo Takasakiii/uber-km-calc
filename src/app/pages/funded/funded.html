@@ -1,0 +1,112 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+  <app-title text="Veículo Financiado" [center]="true" />
+
+  <app-title text="Informações do Financiamento" length="h2" />
+  <app-input-text
+    label="Valor do Automóvel"
+    placeholder="R$ 0.000,00"
+    [control]="form.controls.carValue"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+  <app-input-text
+    label="Valor da Parcela"
+    placeholder="R$ 0.000,00"
+    [control]="form.controls.installmentAmount"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+  <app-input-text
+    label="IPVA (4%)"
+    placeholder="R$ 0.000,00"
+    [control]="form.controls.ipva"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+  <app-input-text
+    label="Depreciação por Ano (%)"
+    placeholder="0%"
+    [control]="form.controls.depreciation"
+    type="number"
+    mask="{?/3/.}"
+  />
+  <app-input-text
+    label="Quilômetros Rodados"
+    placeholder="0.000 km"
+    [control]="form.controls.kmDriven"
+    type="number"
+    mask="{?/3/.}"
+  />
+  <app-input-text
+    label="Valor do Seguro"
+    placeholder="R$ 0.000,00"
+    [control]="form.controls.insuranceValue"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+
+  <app-title text="Combustível" length="h2" />
+  <app-radio-button
+    label="Tipo de Combustível"
+    [options]="gasType"
+    name="gasType"
+    [control]="form.controls.fuelType"
+  />
+  <app-input-text
+    label="Preço do Combustível"
+    placeholder="R$ 0,00"
+    [control]="form.controls.fuelPrice"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+  <app-input-text
+    label="Consumo (km/l)"
+    placeholder="0,00"
+    [control]="form.controls.fuelConsumption"
+    type="number"
+    mask="{?/3/.},{2}"
+  />
+
+  <app-title text="Troca de Óleo" length="h2" />
+  <app-input-text
+    label="Custo da Troca de Óleo"
+    placeholder="R$ 0,00"
+    [control]="form.controls.oilChangeCost"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+  <app-input-text
+    label="Frequência da Troca de Óleo (km)"
+    placeholder="0.000 km"
+    [control]="form.controls.oilChangeFrequency"
+    type="number"
+    mask="{?/3/.}"
+  />
+
+  <app-title text="Troca de Pneus" length="h2" />
+  <app-input-text
+    label="Custo dos Pneus (4 pneus)"
+    placeholder="R$ 0.000,00"
+    [control]="form.controls.tiresCost"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+  <app-input-text
+    label="Vida Útil dos Pneus (km)"
+    placeholder="0.000 km"
+    [control]="form.controls.tiresLifetime"
+    type="number"
+    mask="{?/3/.}"
+  />
+
+  <app-title text="Informações de Lucro" length="h2" />
+  <app-input-text
+    label="Lucro Mensal Desejado"
+    placeholder="R$ 0.000,00"
+    [control]="form.controls.desiredMonthlyProfit"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+  />
+
+  <app-button text="Calcular" />
+</form>

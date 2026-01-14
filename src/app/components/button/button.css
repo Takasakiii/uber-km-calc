@@ -1,0 +1,14 @@
+.button {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: darkslategray;
+  color: white;
+}
+
+.button:active {
+  filter: grayscale(0.7);
+}

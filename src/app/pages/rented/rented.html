@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+  <app-title text="Veículo Alugado" [center]="true" />
+
+  <app-title text="Informações do Aluguel" length="h2" />
+  <app-radio-button
+    label="Período de Locação"
+    [options]="rentType"
+    name="rentType"
+    [control]="form.controls.rentalPeriod"
+  />
+  <app-input-text
+    [label]="`Valor do Aluguel (${rentalSufix()})`"
+    placeholder="R$ 0.000,00"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+    [control]="form.controls.rentalValue"
+  />
+  <app-input-text
+    [label]="`Quilômetros Rodados (${rentalSufix()})`"
+    placeholder="0.000 km"
+    type="number"
+    mask="{?/3/.}"
+    [control]="form.controls.kmDriven"
+  />
+
+  <app-title text="Combustível" length="h2" />
+  <app-radio-button
+    label="Tipo de Combustível"
+    [options]="gasType"
+    name="gasType"
+    [control]="form.controls.fuelType"
+  />
+  <app-input-text
+    label="Preço do Combustível"
+    placeholder="R$ 0,00"
+    mask="R$ {?/3/.},{2}"
+    type="number"
+    [control]="form.controls.fuelPrice"
+  />
+  <app-input-text
+    label="Consumo (km/l)"
+    placeholder="0,00"
+    mask="{?/3/.}"
+    type="number"
+    [control]="form.controls.fuelConsumption"
+  />
+
+  <app-title text="Informações de Lucro" length="h2" />
+  <app-input-text
+    label="Lucro Mensal Desejado"
+    placeholder="R$ 0.000,00"
+    type="number"
+    mask="R$ {?/3/.},{2}"
+    [control]="form.controls.desiredMonthlyProfit"
+  />
+
+  <app-button text="Calcular" />
+</form>

@@ -1,0 +1,15 @@
+<app-label [text]="label()">
+  @if(hasMask()) {
+  <input
+    type="text"
+    [placeholder]="placeholder()"
+    class="input-text"
+    appMask
+    [formatType]="type()"
+    [mask]="mask()!"
+    [formControl]="control()"
+  />
+  } @else {
+  <input type="type()" [placeholder]="placeholder()" class="input-text" [formControl]="control()" />
+  }
+</app-label>

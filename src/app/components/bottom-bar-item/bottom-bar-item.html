@@ -1,0 +1,9 @@
+<a
+  [routerLink]="urlLink()"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="icon-container"
+>
+  <span class="material-symbols-outlined"> {{icon()}} </span>
+  <span class="icon-name">{{name()}}</span>
+</a>
