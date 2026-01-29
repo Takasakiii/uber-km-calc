@@ -53,7 +53,7 @@ export class Funded {
       },
       installmentAmount: getNumberFromForm(formValues.installmentAmount, true),
       fuel: {
-        fuelConsumption: getNumberFromForm(formValues.fuelConsumption),
+        fuelConsumption: getNumberFromForm(formValues.fuelConsumption, true),
         fuelPrice: getNumberFromForm(formValues.fuelPrice, true),
         fuelType: getNumberFromForm(formValues.fuelType),
       },

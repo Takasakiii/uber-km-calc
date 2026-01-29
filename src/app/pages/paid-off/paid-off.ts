@@ -50,7 +50,7 @@ export class PaidOff {
         ipva: getNumberFromForm(formValues.ipva, true),
       },
       fuel: {
-        fuelConsumption: getNumberFromForm(formValues.fuelConsumption),
+        fuelConsumption: getNumberFromForm(formValues.fuelConsumption, true),
         fuelPrice: getNumberFromForm(formValues.fuelPrice, true),
         fuelType: getNumberFromForm(formValues.fuelType),
       },

@@ -1,17 +1,19 @@
 <app-title text="Resultados" [center]="true" />
+@if (result(); as r) {
 <app-result-card-summary
-  [desiredMonthlyProfit]="1"
-  [kmDriven]="result()?.km ?? 0"
-  [kmValueMin]="1000"
-  [kmSpend]="0"
+  [desiredMonthlyProfit]="r.desiredMonthlyProfit"
+  [kmDriven]="r.km"
+  [kmValueMin]="r.kmValueMin"
+  [kmSpend]="r.kmSpend"
 />
-<app-result-card label="Custo mensal" [value]="total()" [km]="result()?.km" />
+<app-result-card label="Custo mensal" [value]="r.total" [km]="r.km" />
 
 <app-title length="h2" text="Custo mensal por categoria" />
-@if(result()?.rent) {
-<app-result-card label="Aluguel" [value]="result()!.rent" [km]="result()?.km" />
-} @if(result()?.fuel) {
-<app-result-card label="Combustivel" [value]="result()!.fuel" [km]="result()?.km" />
+@if(r.rent) {
+<app-result-card label="Aluguel" [value]="r.rent" [km]="r.km" />
+} @if(r.fuel) {
+<app-result-card label="Combustivel" [value]="r.fuel" [km]="r.km" />
 }
 
 <app-graph [data]="graphData" />
+}

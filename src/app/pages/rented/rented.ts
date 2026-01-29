@@ -49,7 +49,7 @@ export class Rented implements OnInit {
         rentalValue: getNumberFromForm(formValues.rentalValue, true),
       },
       fuel: {
-        fuelConsumption: getNumberFromForm(formValues.fuelConsumption),
+        fuelConsumption: getNumberFromForm(formValues.fuelConsumption, true),
         fuelPrice: getNumberFromForm(formValues.fuelPrice, true),
         fuelType: getNumberFromForm(formValues.fuelType),
       },

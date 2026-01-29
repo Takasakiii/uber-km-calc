@@ -61,7 +61,11 @@ export interface Result {
   depreciation: number;
   insurance: number;
   installment: number;
+  desiredMonthlyProfit: number;
   km: number;
+  total: number;
+  kmSpend: number;
+  kmValueMin: number;
 }
 
 @Injectable({
@@ -73,16 +77,36 @@ export class ResultCalc {
 
   public async processResult(values: Data): Promise<void> {
     const km = ResultCalc.getFinalKm(values);
+    const rent = ResultCalc.getRentCost(values.rent);
+    const fuel = ResultCalc.getFuelCost(km, values.fuel);
+    const oil = ResultCalc.getOilCost(km, values.oilCost);
+    const tires = ResultCalc.getTiresCost(km, values.tiresCost);
+    const ipva = ResultCalc.getIpvaCost(values.carInfo);
+    const depreciation = ResultCalc.getDepreciationCost(values.carInfo);
+    const insurance = ResultCalc.getInsuranceCost(values.carInfo);
+    const installment = values.installmentAmount ?? 0;
+    const { desiredMonthlyProfit } = values;
+
+    const total =
+      rent + fuel + oil + tires + ipva + depreciation + insurance + installment;
+
+    const kmSpend = km > 0 ? total / km : 0;
+    const kmValueMin = km > 0 ? (total + desiredMonthlyProfit) / km : 0;
+
     this.result = {
-      rent: ResultCalc.getRentCost(values.rent),
-      fuel: ResultCalc.getFuelCost(km, values.fuel),
-      oil: ResultCalc.getOilCost(km, values.oilCost),
-      tires: ResultCalc.getTiresCost(km, values.tiresCost),
-      ipva: ResultCalc.getIpvaCost(values.carInfo),
-      depreciation: ResultCalc.getDepreciationCost(values.carInfo),
-      insurance: ResultCalc.getInsuranceCost(values.carInfo),
-      installment: values.installmentAmount ?? 0,
+      rent,
+      fuel,
+      oil,
+      tires,
+      ipva,
+      depreciation,
+      insurance,
+      installment,
+      desiredMonthlyProfit,
       km,
+      total,
+      kmSpend,
+      kmValueMin,
     };
 
     await this.router.navigate(['/result']);
