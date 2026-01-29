@@ -1,14 +1,31 @@
 .button {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  padding: 0.3rem 0;
   width: 100%;
+  padding: 0.85rem 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  
   border: none;
-  border-radius: 5px;
-  background-color: darkslategray;
-  color: white;
+  border-radius: 8px;
+  
+  background-image: linear-gradient(to right, #4299E1 0%, #3182CE 51%, #4299E1 100%);
+  background-size: 200% auto;
+  color: var(--on-primary);
+  
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-position: right center;
+  filter: brightness(1.1);
 }
 
 .button:active {
-  filter: grayscale(0.7);
+  transform: translateY(1px);
+  filter: brightness(0.9);
 }

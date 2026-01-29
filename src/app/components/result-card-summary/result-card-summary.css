@@ -1,9 +1,16 @@
 .result-card {
   text-align: justify;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  
+  background-color: var(--surface-1);
+  border-radius: 12px;
+  
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 .result-card strong {
-  color: darkslategray;
-  font-weight: bold;
+  color: var(--primary);
+  font-weight: 500;
 }
