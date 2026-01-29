@@ -50,7 +50,6 @@ export class Funded {
         depreciation: getNumberFromForm(formValues.depreciation),
         insuranceValue: getNumberFromForm(formValues.insuranceValue, true),
         ipva: getNumberFromForm(formValues.ipva, true),
-        kmDriven: getNumberFromForm(formValues.kmDriven),
       },
       installmentAmount: getNumberFromForm(formValues.installmentAmount, true),
       fuel: {
@@ -67,6 +66,7 @@ export class Funded {
         tiresLifetime: getNumberFromForm(formValues.tiresLifetime),
       },
       desiredMonthlyProfit: getNumberFromForm(formValues.desiredMonthlyProfit, true),
+      kmDriven: getNumberFromForm(formValues.kmDriven),
     });
   }
 }

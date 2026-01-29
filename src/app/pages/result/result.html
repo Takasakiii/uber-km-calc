@@ -1,1 +1,17 @@
-<p>result works!</p>
+<app-title text="Resultados" [center]="true" />
+<app-result-card-summary
+  [desiredMonthlyProfit]="1"
+  [kmDriven]="result()?.km ?? 0"
+  [kmValueMin]="1000"
+  [kmSpend]="0"
+/>
+<app-result-card label="Custo mensal" [value]="total()" [km]="result()?.km" />
+
+<app-title length="h2" text="Custo mensal por categoria" />
+@if(result()?.rent) {
+<app-result-card label="Aluguel" [value]="result()!.rent" [km]="result()?.km" />
+} @if(result()?.fuel) {
+<app-result-card label="Combustivel" [value]="result()!.fuel" [km]="result()?.km" />
+}
+
+<app-graph [data]="graphData" />

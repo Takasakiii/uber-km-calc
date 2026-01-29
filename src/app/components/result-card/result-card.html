@@ -1,0 +1,10 @@
+<div class="result-card">
+  <div class="icon"></div>
+  <div class="text-container">
+    {{ label() }}
+    <strong>{{ value() | money }}</strong>
+    @if(kmCost()) {
+    <small>{{ kmCost() | money }} /km</small>
+    }
+  </div>
+</div>

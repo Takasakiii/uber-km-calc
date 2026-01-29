@@ -45,7 +45,6 @@ export class Rented implements OnInit {
     const formValues = this.form.value;
     await this.resultCalc.processResult({
       rent: {
-        kmDriven: getNumberFromForm(formValues.kmDriven),
         rentalPeriod: getNumberFromForm(formValues.rentalPeriod),
         rentalValue: getNumberFromForm(formValues.rentalValue, true),
       },
@@ -56,6 +55,7 @@ export class Rented implements OnInit {
       },
 
       desiredMonthlyProfit: getNumberFromForm(formValues.desiredMonthlyProfit, true),
+      kmDriven: getNumberFromForm(formValues.kmDriven),
     });
   }
 }

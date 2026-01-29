@@ -1,0 +1,5 @@
+.graph {
+  border: 1px solid darkgray;
+  width: calc(100vw - 2rem);
+  border-radius: 5px;
+}

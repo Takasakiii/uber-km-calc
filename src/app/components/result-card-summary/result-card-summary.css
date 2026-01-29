@@ -1,0 +1,9 @@
+.result-card {
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+
+.result-card strong {
+  color: darkslategray;
+  font-weight: bold;
+}

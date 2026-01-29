@@ -1,0 +1,46 @@
+.result-card {
+  background-color: darkslategray;
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.icon::after {
+  content: '$';
+  background-color: white;
+  width: 3.3rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  font-weight: bold;
+  color: darkslategray;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  line-height: 1.5rem;
+}
+
+.text-container strong {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.text-container small {
+  font-weight: 400;
+  font-size: 0.7rem;
+}

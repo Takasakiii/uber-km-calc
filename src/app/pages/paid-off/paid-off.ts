@@ -48,7 +48,6 @@ export class PaidOff {
         depreciation: getNumberFromForm(formValues.depreciation),
         insuranceValue: getNumberFromForm(formValues.insuranceValue, true),
         ipva: getNumberFromForm(formValues.ipva, true),
-        kmDriven: getNumberFromForm(formValues.kmDriven),
       },
       fuel: {
         fuelConsumption: getNumberFromForm(formValues.fuelConsumption),
@@ -64,6 +63,7 @@ export class PaidOff {
         tiresLifetime: getNumberFromForm(formValues.tiresLifetime),
       },
       desiredMonthlyProfit: getNumberFromForm(formValues.desiredMonthlyProfit, true),
+      kmDriven: getNumberFromForm(formValues.kmDriven),
     });
   }
 }

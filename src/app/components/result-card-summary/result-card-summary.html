@@ -1,0 +1,8 @@
+<p class="result-card">
+  Considerando os dados apresentados, para alcançar um lucro líquido de
+  <strong>{{ desiredMonthlyProfit() | money }}</strong> ao percorrer
+  <strong>{{ kmDriven() | km }}</strong> por mês, é necessário aceitar corridas com valor mínimo de
+  <strong>{{ kmValueMin() | money }}</strong> por quilômetro.<br /><br />
+  Ao trabalhar com tarifas acima desse patamar, seu ganho líquido estimado será de
+  <strong>{{ kmSpend() | money }}</strong> por quilômetro rodado.
+</p>
