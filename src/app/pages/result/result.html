@@ -12,7 +12,19 @@
 @if(r.rent) {
 <app-result-card label="Aluguel" [value]="r.rent" [km]="r.km" />
 } @if(r.fuel) {
-<app-result-card label="Combustivel" [value]="r.fuel" [km]="r.km" />
+<app-result-card label="Combustível" [value]="r.fuel" [km]="r.km" />
+} @if(r.oil) {
+<app-result-card label="Óleo" [value]="r.oil" [km]="r.km" />
+} @if(r.tires) {
+<app-result-card label="Pneus" [value]="r.tires" [km]="r.km" />
+} @if(r.ipva) {
+<app-result-card label="IPVA" [value]="r.ipva" [km]="r.km" />
+} @if(r.depreciation) {
+<app-result-card label="Depreciação" [value]="r.depreciation" [km]="r.km" />
+} @if(r.insurance) {
+<app-result-card label="Seguro" [value]="r.insurance" [km]="r.km" />
+} @if(r.installment) {
+<app-result-card label="Financiamento" [value]="r.installment" [km]="r.km" />
 }
 
 <app-graph [data]="graphData" />
