@@ -57,6 +57,10 @@ export interface Result {
   fuel: number;
   oil: number;
   tires: number;
+  ipva: number;
+  depreciation: number;
+  insurance: number;
+  installment: number;
   km: number;
 }
 
@@ -74,6 +78,10 @@ export class ResultCalc {
       fuel: ResultCalc.getFuelCost(km, values.fuel),
       oil: ResultCalc.getOilCost(km, values.oilCost),
       tires: ResultCalc.getTiresCost(km, values.tiresCost),
+      ipva: ResultCalc.getIpvaCost(values.carInfo),
+      depreciation: ResultCalc.getDepreciationCost(values.carInfo),
+      insurance: ResultCalc.getInsuranceCost(values.carInfo),
+      installment: values.installmentAmount ?? 0,
       km,
     };
 
@@ -153,5 +161,29 @@ export class ResultCalc {
     }
 
     return (km / tires.tiresLifetime) * tires.tiresCost;
+  }
+
+  private static getIpvaCost(carInfo?: CarInfo): number {
+    if (!carInfo) {
+      return 0;
+    }
+
+    return carInfo.ipva / 12;
+  }
+
+  private static getDepreciationCost(carInfo?: CarInfo): number {
+    if (!carInfo) {
+      return 0;
+    }
+
+    return (carInfo.carValue * (carInfo.depreciation / 100)) / 12;
+  }
+
+  private static getInsuranceCost(carInfo?: CarInfo): number {
+    if (!carInfo) {
+      return 0;
+    }
+
+    return carInfo.insuranceValue / 12;
   }
 }
